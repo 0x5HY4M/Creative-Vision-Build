@@ -16,6 +16,26 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **API codegen**: Orval (from OpenAPI spec)
 - **Build**: esbuild (CJS bundle)
 
+## Artifacts
+
+### Financial Bridge Page (`/`)
+- **Type**: React + Vite (no backend)
+- **Path**: `artifacts/financial-bridge/`
+- **Stack**: React, Tailwind CSS, GSAP + ScrollTrigger, shadcn/ui
+- **Design**: Neo-brutalism — Deep Midnight Navy (#0A0F1E), Cyber Lime (#C8F135) accents, white/gold text
+- **Features**:
+  - Single scroll container with `#smooth-wrapper` (body overflow hidden)
+  - Hero with GSAP fade-in animation + SVG geometric background
+  - Trust stats bar with animated counters
+  - Sticky card stack scrollytelling (Bidwells-style, 3 cards with 3D rotation)
+  - How It Works section with staggered scroll reveals
+  - Conversational multi-step lead capture form (Duolingo-style)
+    - Conditional logic: Solar vs Finance/Grants paths
+    - Real-time email + UK postcode validation
+    - Cyber Lime progress bar with ping animation
+  - 3 resource article cards (neo-brutalist hover)
+  - Footer with Transparency Disclosure, contact: ayan@gmail.com
+
 ## Key Commands
 
 - `pnpm run typecheck` — full typecheck across all packages

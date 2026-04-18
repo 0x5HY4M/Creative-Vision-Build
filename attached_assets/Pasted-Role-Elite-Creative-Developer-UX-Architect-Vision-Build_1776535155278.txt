@@ -1,0 +1,44 @@
+Role: Elite Creative Developer & UX Architect.
+Vision: Build a world-class, high-authority financial bridge page inspired by "The Pudding" and "Bidwells." Use Neo-brutalism for high-contrast trust and GSAP for professional scrollytelling.
+
+1. Core Architecture (Anti-Messy Rules):
+
+Zero-Scroll Glitch: Use a single scroll container. Lock html, body to overflow: hidden and manage all scrolling within a #smooth-wrapper. No double scrollbars.
+
+Mobile-First First: Design every element for a 6.7-inch screen first, then scale for desktop.
+
+Performance: Use lightweight GSAP ScrollTrigger. No heavy images; use CSS gradients and SVG patterns.
+
+2. The Scrollytelling Engine (Bidwells Style):
+
+Sticky Pinning: Create a "sticky-stack" section. As the user scrolls, the background stays pinned, and 3D-styled cards (Wealth, Security, Grants) slide in, rotate from 15deg to 0deg, and stack on top of each other.
+
+Staggered Reveals: Use ScrollTrigger to make every heading and paragraph "type-in" or "fade-up" as it hits the center of the screen.
+
+3. Conversational "Duolingo" Form:
+
+The Interface: A clean, conversational multi-step form. One question at a time.
+
+Gamification: A "Wealth Potential" progress bar at the top that fills with a "ping" sound (visual cue) as steps are completed.
+
+Conditional Logic: If user selects "Solar," show energy-specific questions. If "Finance," show income-specific questions.
+
+Instant Validation: Real-time email check (pulse green on success, shake red on error). No page refreshes.
+
+4. Design Aesthetic (Neo-Brutalism):
+
+Colors: Deep Midnight Navy, Cyber Lime highlights, and White/Gold accents.
+
+Styling: Sharp 4px borders, hard drop-shadows (non-blurred), and massive bold headings (Inter Tight).
+
+No Blobs: Strictly use clean geometric cards and glassmorphism (backdrop-blur-lg) for text readability.
+
+5. Content & Compliance:
+
+Authority: Add a "Transparency Disclosure" in a stylish, minimalist footer.
+
+Contact: ONLY email: ayan@gmail.com. No phone, no address.
+
+Articles: 3 "7-min read" deep-dive resource cards with sticky-scroll interaction.
+
+Instruction for AI: Start by setting up the React + Tailwind environment. Build the SmoothWrapper first, then the ScrollySections, and finally the ConversationalForm. Ensure 100% responsive precision.
