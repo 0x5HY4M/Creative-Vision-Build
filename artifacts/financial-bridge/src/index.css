@@ -141,12 +141,12 @@
     @apply font-display tracking-tight;
   }
 
-  html, body { overflow: hidden; margin: 0; padding: 0; height: 100vh; }
+  html, body { overflow: hidden; overflow-x: hidden; margin: 0; padding: 0; height: 100vh; }
   #smooth-wrapper {
     height: 100vh;
     overflow-y: scroll;
     overflow-x: hidden;
-    background: linear-gradient(to bottom, #020617 0%, #0f172a 60%, #020617 100%);
+    background: #030712;
     background-attachment: local;
   }
 }

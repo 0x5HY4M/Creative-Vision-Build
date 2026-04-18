@@ -48,7 +48,7 @@ export default function TermsOfService() {
 
               <h2>Governing Law</h2>
               <p>
-                These Terms shall be governed and construed in accordance with the laws of England & Wales, without regard to its conflict of law provisions. Any dispute arising from these terms shall be subject to the exclusive jurisdiction of the courts of England & Wales.
+                These Terms shall be governed and construed in accordance with the laws of the State of Delaware, United States of America, without regard to its conflict of law provisions. Any dispute arising from these terms shall be subject to the exclusive jurisdiction of the federal and state courts located in Delaware, USA.
               </p>
 
               <h2>Changes to Terms</h2>

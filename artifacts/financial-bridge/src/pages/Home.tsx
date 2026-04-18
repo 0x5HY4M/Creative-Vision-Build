@@ -1,4 +1,5 @@
 import SmoothWrapper from '@/components/SmoothWrapper';
+import FloatingBlobs from '@/components/FloatingBlobs';
 import HeroSection from '@/components/HeroSection';
 import TrustStats from '@/components/TrustStats';
 import StickyCardStack from '@/components/StickyCardStack';
@@ -11,16 +12,19 @@ import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <SmoothWrapper>
-      <HeroSection />
-      <TrustStats />
-      <StickyCardStack />
-      <HorizontalGallery />
-      <HowItWorks />
-      <ComplianceSection />
-      <ConversationalForm />
-      <ArticleCards />
-      <Footer />
-    </SmoothWrapper>
+    <>
+      <FloatingBlobs />
+      <SmoothWrapper>
+        <HeroSection />
+        <TrustStats />
+        <StickyCardStack />
+        <HorizontalGallery />
+        <HowItWorks />
+        <ComplianceSection />
+        <ConversationalForm />
+        <ArticleCards />
+        <Footer />
+      </SmoothWrapper>
+    </>
   );
 }

@@ -5,9 +5,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
-  { value: 5.8, suffix: "M+", label: "Distributed" },
-  { value: 12000, suffix: "+", label: "Families Helped" },
-  { value: 94, suffix: "%", label: "Approval Rate" }
+  { value: 5.8, suffix: "M+", prefix: "$", label: "Distributed" },
+  { value: 12000, suffix: "+", prefix: "", label: "Families Helped" },
+  { value: 94, suffix: "%", prefix: "", label: "Approval Rate" }
 ];
 
 export default function TrustStats() {
@@ -21,7 +21,7 @@ export default function TrustStats() {
       countersRef.current.forEach((counter, i) => {
         if (!counter) return;
         const targetValue = stats[i].value;
-        
+
         ScrollTrigger.create({
           trigger: containerRef.current,
           scroller: "#smooth-wrapper",
@@ -33,9 +33,11 @@ export default function TrustStats() {
               force3D: true,
               snap: { innerHTML: targetValue > 100 ? 1 : 0.1 },
               ease: "power2.out",
-              onUpdate: function() {
+              onUpdate: function () {
                 const val = parseFloat(this.targets()[0].innerHTML);
-                counter.innerHTML = val > 1000 ? val.toLocaleString() : (stats[i].value % 1 !== 0 ? val.toFixed(1) : Math.round(val).toString());
+                counter.innerHTML = val > 1000
+                  ? val.toLocaleString()
+                  : (stats[i].value % 1 !== 0 ? val.toFixed(1) : Math.round(val).toString());
               }
             });
           },
@@ -47,7 +49,9 @@ export default function TrustStats() {
     mm.add("(prefers-reduced-motion: reduce)", () => {
       countersRef.current.forEach((counter, i) => {
         if (!counter) return;
-        counter.innerHTML = stats[i].value > 1000 ? stats[i].value.toLocaleString() : stats[i].value.toString();
+        counter.innerHTML = stats[i].value > 1000
+          ? stats[i].value.toLocaleString()
+          : stats[i].value.toString();
       });
     });
 
@@ -55,8 +59,8 @@ export default function TrustStats() {
   }, []);
 
   return (
-    <section 
-      ref={containerRef} 
+    <section
+      ref={containerRef}
       className="py-12 relative"
       data-testid="trust-stats-bar"
     >
@@ -65,7 +69,7 @@ export default function TrustStats() {
           {stats.map((stat, i) => (
             <div key={i} className="text-center flex flex-col items-center">
               <div className={`text-4xl sm:text-5xl md:text-6xl font-black font-display tracking-tighter mb-2 ${i === 0 ? 'text-gold' : i === 1 ? 'text-accent' : 'text-white'}`}>
-                {stat.value === 5.8 && <span>£</span>}
+                {stat.prefix && <span>{stat.prefix}</span>}
                 <span ref={(el) => countersRef.current[i] = el}>0</span>
                 <span>{stat.suffix}</span>
               </div>

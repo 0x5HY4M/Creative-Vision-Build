@@ -43,46 +43,46 @@ export default function StickyCardStack() {
           end: "+=300%",
           pin: true,
           scrub: 1,
+          fastScrollEnd: true,
         }
       });
 
       cardsRef.current.forEach((card, index) => {
         if (!card) return;
-        
+
         gsap.set(card, {
-          y: index * 40 + 100, // Initial offset down
-          rotateY: 15,
-          scale: 0.9,
+          y: index * 60 + 120,
+          rotateX: 15,
+          scale: 0.92,
           opacity: 0,
-          zIndex: index + 1
+          zIndex: index + 1,
+          willChange: 'transform, opacity',
         });
 
         tl.to(card, {
-          y: index * 40,
-          rotateY: 0,
+          y: index * 36,
+          rotateX: 0,
           scale: 1,
           opacity: 1,
           duration: 1,
-          ease: "power2.out",
-          force3D: true
-        }, index * 1.5);
+          ease: "power3.out",
+          force3D: true,
+        }, index * 1.2);
       });
     });
 
     mm.add("(max-width: 767px) or (prefers-reduced-motion: reduce)", () => {
-      // Mobile fallback: simple scroll list
       cardsRef.current.forEach((card, index) => {
         if (!card) return;
         gsap.set(card, {
           y: 0,
-          rotateY: 0,
+          rotateX: 0,
           scale: 1,
           opacity: 1,
           zIndex: index + 1,
           position: "relative",
-          marginBottom: "1rem",
-          transform: "none",
-          force3D: true
+          willChange: 'auto',
+          force3D: true,
         });
       });
     });
@@ -91,29 +91,38 @@ export default function StickyCardStack() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-transparent relative py-20 min-h-[100dvh] flex items-center overflow-hidden" data-testid="sticky-card-stack">
+    <section
+      ref={sectionRef}
+      className="bg-transparent relative py-20 min-h-[100dvh] flex items-center overflow-hidden"
+      data-testid="sticky-card-stack"
+      style={{ perspective: '1200px' }}
+    >
       <div className="max-w-6xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="mb-12 md:mb-0">
           <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight uppercase font-display">
-            The Pillars of <br/><span className="text-accent">Generational</span> Wealth
+            The Pillars of <br /><span className="text-accent glow-lime-text">Generational</span> Wealth
           </h2>
-          <p className="text-xl text-muted-foreground font-medium">
-            Three core strategies to build, protect, and maximize your financial future. As you scroll, discover how each pillar connects to your overall potential.
+          <p className="text-lg text-muted-foreground font-medium leading-relaxed">
+            Three core strategies to build, protect, and maximize your financial future. Scroll to see each pillar connect to your overall potential.
           </p>
         </div>
-        
-        <div ref={containerRef} className="relative h-[400px] w-full perspective-1000">
+
+        <div
+          ref={containerRef}
+          className="relative h-[420px] w-full"
+          style={{ transformStyle: 'preserve-3d', perspective: '1200px' }}
+        >
           {cards.map((card, index) => (
-            <div 
+            <div
               key={index}
               ref={el => cardsRef.current[index] = el}
-              className={`absolute top-0 left-0 w-full p-8 md:p-10 border border-white/10 shadow-[0_0_30px_rgba(190,242,100,0.1)] glass-card glass-card-hover text-white transition-all duration-300 hover:-translate-y-1`}
-              style={{ transformStyle: 'preserve-3d' }}
+              className="absolute top-0 left-0 w-full p-8 md:p-10 border border-white/10 shadow-[0_0_30px_rgba(190,242,100,0.1)] glass-card text-white transition-colors duration-300 hover:border-accent/30"
+              style={{ transformStyle: 'preserve-3d', willChange: 'transform, opacity' }}
               data-testid={`card-stack-item-${index}`}
             >
-              <div className={`text-sm font-black tracking-widest mb-4 opacity-100 ${card.numColor}`}>0{index + 1}</div>
+              <div className={`text-sm font-black tracking-widest mb-4 ${card.numColor}`}>0{index + 1}</div>
               <h3 className="text-xl sm:text-2xl md:text-3xl font-black mb-4 font-display uppercase leading-tight">{card.title}</h3>
-              <p className="text-lg font-medium leading-relaxed">{card.description}</p>
+              <p className="text-base md:text-lg font-medium leading-relaxed text-muted-foreground">{card.description}</p>
             </div>
           ))}
         </div>

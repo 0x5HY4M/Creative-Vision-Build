@@ -1,0 +1,68 @@
+Role: Senior Creative Developer & Compliance Architect.
+Mission: Transform WealthQuest 2026 into a dark, premium, floating glassmorphic experience. Ensure 100% mobile functionality and fix all broken routes.
+
+1. The "Obsidian Glass" Design Language:
+
+Background: Deep obsidian dark theme (#030712). Add a Floating Curved Background effect using animated SVG blobs or a CSS clip-path that shifts subtly as the user scrolls.
+
+Glassmorphism: All UI elements must use backdrop-blur-2xl, bg-white/[0.03], and a 1px border-white/10.
+
+Global Replace: Search and replace EVERY instance of "UK" with "USA". All currency symbols must be "$".
+
+2. Mobile-First Animation Engine (The Fix):
+
+Issue: Mobile effects are frozen. Fix: Use GSAP ScrollTrigger with fastScrollEnd: true and will-change: transform.
+
+Reveal Effect: Pinned Top section that slides up to reveal the content.
+
+Sticky Stacking: Vertical cards that "stack" on top of each other with a 3D rotation from rotateX(15deg) to rotateX(0deg) as they hit the top.
+
+Horizontal Storytelling: Implement a smooth horizontal scroll section for "Success Stories" that works flawlessly with thumb-swipes on mobile.
+
+3. Full Page Routing (React Router):
+
+Setup BrowserRouter. Every link in the Footer MUST open a dedicated, styled component:
+
+/privacy: Comprehensive Privacy Policy.
+
+/terms: Terms of Use.
+
+/ccpa: California Consumer Privacy Act rights.
+
+/tcpa: Telephone Consumer Protection Act consent.
+
+/do-not-sell: Data opt-out page.
+
+Design: These pages must follow the same Dark Glassmorphic theme. NO BLANK WHITE PAGES.
+
+4. The "Conversational" Lead Engine:
+
+A 4-step multi-stage form. One question at a time.
+
+Gamification: Top progress bar (Cyber Lime) that pulses when a step is completed.
+
+Logic: Step 3 must be conditional (If "Debt" -> show debt slider; If "Grants" -> show property type).
+
+5. The "Perfect Section" (Compliance image_0c2006.jpg):
+
+Build a 4-column grid with glowing glass icons:
+
+Card 1: "256-bit SSL" (Lock icon).
+
+Card 2: "CCPA Ready" (Shield icon).
+
+Card 3: "TCPA Compliant" (Communication icon).
+
+Card 4: "USA Verified" (Flag/Check icon).
+
+Verbatim Footer Disclosure: Insert the exact legal advertisement text from the provided image.
+
+6. Contact Cleanup:
+
+REMOVE all addresses and phone numbers. The ONLY contact method is: ayan@gmail.com.
+
+Technical Constraint for AI: > - Use force3D: true for all animations.
+
+Ensure overflow-x: hidden on the root to prevent horizontal "jiggle" on mobile.
+
+Implement a "Mobile Fallback" where complex 3D WebGL turns into smooth CSS transitions if the device frame-rate drops.
