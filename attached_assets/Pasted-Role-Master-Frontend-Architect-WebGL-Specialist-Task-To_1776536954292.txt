@@ -1,0 +1,40 @@
+Role: Master Frontend Architect & WebGL Specialist.
+Task: Total redesign of WealthQuest 2026. Eliminate the white background. Fix mobile responsiveness and broken route pages.
+
+1. The "Mysterious" Visual Palette:
+
+Background: Use a deep, obsidian-to-navy gradient (#020617 to #0f172a).
+
+Accent Colors: Use "Cyber Lime" (#bef264) for buttons and "Electric Gold" for high-value text.
+
+Glassmorphism: All cards must be bg-white/5 with a backdrop-blur-xl and a thin border-white/10.
+
+2. Mobile-Perfect Scrollytelling (Bidwells & The Pudding style):
+
+Reveal Effect: Implement a "Pinned Top" header that stays fixed while the next section (The Lead Engine) slides over it smoothly.
+
+Sticky Stacking: As the user scrolls vertically, cards must stack on top of each other with a 3D rotation effect (from 10deg to 0deg).
+
+Horizontal Scroll (Mobile-First): Create a section where vertical scrolling triggers a Horizontal gallery of "Success Stories". Ensure this works on touch-screen devices using GSAP Observer or ScrollTrigger.
+
+3.D WebGL Background: Instead of a static image, use a floating, interactive 3D particle mesh that reacts to the thumb-scroll on mobile.
+
+3. Fix Broken Pages & Routing:
+
+Mandatory: Setup react-router-dom. Ensure /privacy, /terms, /ccpa, and /tcpa are fully functional and linked in the footer.
+
+Content: Populate these pages with professional legal templates. NO BLANK PAGES.
+
+4. Typography & UX Fix:
+
+Heading Fix: On mobile, reduce heading sizes (text-3xl max) and use leading-tight to prevent text overlapping or looking "ajeeb".
+
+Micro-interactions: Add a glowing pulse effect to the "Start Assessment" button. Use staggered text reveals for every paragraph.
+
+5. The "Perfect Section" (Compliance image_0c2006.jpg):
+
+Re-implement the security grid from the image exactly. Use glowing icons for 256-bit SSL, CCPA, and TCPA.
+
+Contact: Footer must only show ayan@gmail.com. Remove all address/phone placeholders.
+
+Technical Constraint: For mobile smoothness, use force3D: true in all GSAP animations and ensure scroll-behavior: smooth is NOT conflicting with GSAP.

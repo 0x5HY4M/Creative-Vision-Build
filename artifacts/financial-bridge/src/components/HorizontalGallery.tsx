@@ -44,6 +44,7 @@ export default function HorizontalGallery() {
       const tl = gsap.to(panels, {
         xPercent: -100 * (panels.length - 1),
         ease: "none",
+        force3D: true,
         scrollTrigger: {
           trigger: section,
           scroller: "#smooth-wrapper",
@@ -62,10 +63,10 @@ export default function HorizontalGallery() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 bg-white relative" data-testid="horizontal-gallery">
+    <section ref={sectionRef} className="py-24 bg-transparent relative" data-testid="horizontal-gallery">
       <div className="max-w-7xl mx-auto px-6 mb-12">
         <span className="text-accent font-bold tracking-widest uppercase mb-4 block">Case Studies</span>
-        <h2 className="text-4xl md:text-6xl font-black text-black uppercase font-display">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-white uppercase font-display leading-tight">
           Editor's Picks
         </h2>
       </div>
@@ -76,11 +77,11 @@ export default function HorizontalGallery() {
             key={i} 
             className="h-panel md:w-screen flex-shrink-0 md:pr-12"
           >
-            <div className="bg-card text-card-foreground border-4 border-black p-8 md:p-12 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] h-full min-h-[350px] flex flex-col max-w-xl">
+            <div className="glass-card text-white border border-white/10 p-8 md:p-12 shadow-[0_0_30px_rgba(190,242,100,0.08)] h-full min-h-[350px] flex flex-col max-w-xl">
               <div className="text-6xl md:text-8xl font-black text-transparent [-webkit-text-stroke:2px_hsl(var(--accent))] opacity-50 mb-6">
                 {study.num}
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold uppercase mb-4 font-display">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold uppercase mb-4 font-display leading-tight">
                 {study.title}
               </h3>
               <div className="h-1 w-16 bg-accent mb-6"></div>

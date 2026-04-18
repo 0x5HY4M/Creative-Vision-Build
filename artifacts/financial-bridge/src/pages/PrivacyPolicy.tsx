@@ -7,12 +7,12 @@ export default function PrivacyPolicy() {
     <SmoothWrapper>
       <div className="min-h-screen flex flex-col">
         <main className="flex-grow pt-24 pb-16 px-6">
-          <div className="max-w-4xl mx-auto bg-card border-4 border-black p-8 md:p-12 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
+          <div className="max-w-4xl mx-auto glass-card border border-white/10 p-8 md:p-12 shadow-[0_0_60px_rgba(190,242,100,0.08)]">
             <Link href="/" className="inline-block text-accent font-bold uppercase tracking-wider mb-8 hover:text-white transition-colors">
               ← Back to Home
             </Link>
             
-            <h1 className="text-4xl md:text-5xl font-black text-white uppercase font-display mb-4">Privacy Policy</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-black text-white uppercase font-display mb-4 leading-tight">Privacy Policy</h1>
             <p className="text-muted-foreground font-bold mb-12">Effective Date: January 1, 2026</p>
             
             <div className="prose prose-invert prose-p:text-muted-foreground prose-headings:text-white prose-headings:font-display prose-headings:uppercase max-w-none">

@@ -8,20 +8,17 @@ const cards = [
   {
     title: "Wealth Building",
     description: "Access exclusive investment programs designed to accelerate your portfolio growth with expert-backed strategies.",
-    color: "bg-background",
-    textColor: "text-white"
+    numColor: "text-accent"
   },
   {
     title: "Financial Security",
     description: "Discover protection and insurance schemes that safeguard your family's future against unexpected downturns.",
-    color: "bg-primary",
-    textColor: "text-primary-foreground"
+    numColor: "text-gold"
   },
   {
     title: "Government Grants",
     description: "Unlock funding for solar energy, home improvements, and small business initiatives that you already qualify for.",
-    color: "bg-accent",
-    textColor: "text-accent-foreground"
+    numColor: "text-white"
   }
 ];
 
@@ -66,7 +63,8 @@ export default function StickyCardStack() {
           scale: 1,
           opacity: 1,
           duration: 1,
-          ease: "power2.out"
+          ease: "power2.out",
+          force3D: true
         }, index * 1.5);
       });
     });
@@ -83,7 +81,8 @@ export default function StickyCardStack() {
           zIndex: index + 1,
           position: "relative",
           marginBottom: "1rem",
-          transform: "none"
+          transform: "none",
+          force3D: true
         });
       });
     });
@@ -92,10 +91,10 @@ export default function StickyCardStack() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-secondary relative py-20 min-h-screen flex items-center overflow-hidden" data-testid="sticky-card-stack">
+    <section ref={sectionRef} className="bg-transparent relative py-20 min-h-[100dvh] flex items-center overflow-hidden" data-testid="sticky-card-stack">
       <div className="max-w-6xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="mb-12 md:mb-0">
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight uppercase font-display">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight uppercase font-display">
             The Pillars of <br/><span className="text-accent">Generational</span> Wealth
           </h2>
           <p className="text-xl text-muted-foreground font-medium">
@@ -108,12 +107,12 @@ export default function StickyCardStack() {
             <div 
               key={index}
               ref={el => cardsRef.current[index] = el}
-              className={`absolute top-0 left-0 w-full p-8 md:p-10 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] ${card.color} ${card.textColor} transition-shadow duration-300 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-1`}
+              className={`absolute top-0 left-0 w-full p-8 md:p-10 border border-white/10 shadow-[0_0_30px_rgba(190,242,100,0.1)] glass-card glass-card-hover text-white transition-all duration-300 hover:-translate-y-1`}
               style={{ transformStyle: 'preserve-3d' }}
               data-testid={`card-stack-item-${index}`}
             >
-              <div className="text-sm font-black tracking-widest mb-4 opacity-70">0{index + 1}</div>
-              <h3 className="text-3xl font-black mb-4 font-display uppercase">{card.title}</h3>
+              <div className={`text-sm font-black tracking-widest mb-4 opacity-100 ${card.numColor}`}>0{index + 1}</div>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-black mb-4 font-display uppercase leading-tight">{card.title}</h3>
               <p className="text-lg font-medium leading-relaxed">{card.description}</p>
             </div>
           ))}

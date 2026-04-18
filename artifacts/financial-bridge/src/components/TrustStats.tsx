@@ -30,6 +30,7 @@ export default function TrustStats() {
             gsap.to(counter, {
               innerHTML: targetValue,
               duration: 2,
+              force3D: true,
               snap: { innerHTML: targetValue > 100 ? 1 : 0.1 },
               ease: "power2.out",
               onUpdate: function() {
@@ -56,19 +57,19 @@ export default function TrustStats() {
   return (
     <section 
       ref={containerRef} 
-      className="py-12 bg-primary text-primary-foreground border-y-4 border-white"
+      className="py-12 relative"
       data-testid="trust-stats-bar"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="glass-card border-y border-white/10 max-w-7xl mx-auto p-6 md:p-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4">
           {stats.map((stat, i) => (
             <div key={i} className="text-center flex flex-col items-center">
-              <div className="text-5xl md:text-6xl font-black font-display tracking-tighter mb-2">
-                {stat.value === 2.4 && <span>£</span>}
+              <div className={`text-4xl sm:text-5xl md:text-6xl font-black font-display tracking-tighter mb-2 ${i === 0 ? 'text-gold' : i === 1 ? 'text-accent' : 'text-white'}`}>
+                {stat.value === 5.8 && <span>£</span>}
                 <span ref={(el) => countersRef.current[i] = el}>0</span>
                 <span>{stat.suffix}</span>
               </div>
-              <div className="text-lg md:text-xl font-bold uppercase tracking-wider">
+              <div className="text-lg md:text-xl font-bold uppercase tracking-wider text-muted-foreground">
                 {stat.label}
               </div>
             </div>

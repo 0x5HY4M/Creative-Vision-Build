@@ -42,7 +42,7 @@ export default function HowItWorks() {
           onEnter: () => {
             gsap.fromTo(step, 
               { opacity: 0, y: 50 },
-              { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+              { opacity: 1, y: 0, duration: 0.8, ease: "power3.out", force3D: true }
             );
           },
           once: true
@@ -60,27 +60,27 @@ export default function HowItWorks() {
   }, []);
 
   return (
-    <section className="py-24 bg-background relative" data-testid="how-it-works" ref={containerRef}>
+    <section className="py-24 bg-transparent relative" data-testid="how-it-works" ref={containerRef}>
       <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-4xl md:text-6xl font-black text-center text-white mb-20 uppercase font-display">
-          How WealthQuest 2026 <span className="text-primary">Works</span>
+        <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-center text-white mb-20 uppercase font-display leading-tight">
+          How WealthQuest 2026 <span className="text-accent">Works</span>
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
           {/* Connecting line */}
-          <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-1 bg-muted -z-10"></div>
+          <div className="hidden md:block absolute top-[48px] left-[10%] right-[10%] h-1 bg-white/10 -z-10"></div>
           
           {steps.map((step, i) => (
             <div 
               key={i} 
               ref={el => stepsRef.current[i] = el}
-              className="flex flex-col items-center text-center opacity-0"
+              className="flex flex-col items-center text-center opacity-0 glass-card p-8 border border-white/10"
               data-testid={`how-it-works-step-${i}`}
             >
-              <div className="w-24 h-24 bg-background border-4 border-primary text-primary font-black text-3xl flex items-center justify-center mb-8 shadow-[6px_6px_0px_0px_hsl(var(--primary))] z-10">
+              <div className="w-24 h-24 rounded-full bg-transparent border-4 border-accent text-accent font-black text-3xl flex items-center justify-center mb-8 shadow-[0_0_20px_rgba(190,242,100,0.4)] z-10">
                 {step.num}
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4 uppercase">{step.title}</h3>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-4 uppercase leading-tight">{step.title}</h3>
               <p className="text-muted-foreground font-medium">{step.desc}</p>
             </div>
           ))}
