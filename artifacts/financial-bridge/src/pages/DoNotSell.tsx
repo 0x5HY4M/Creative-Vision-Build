@@ -19,7 +19,7 @@ export default function DoNotSell() {
     <SmoothWrapper>
       <div className="min-h-screen flex flex-col">
         <main className="flex-grow pt-24 pb-16 px-6">
-          <div className="max-w-4xl mx-auto glass-card border border-white/10 p-8 md:p-12 shadow-[0_0_60px_rgba(190,242,100,0.08)]">
+          <div className="max-w-4xl mx-auto bg-white/[0.02] backdrop-blur-3xl border border-white/10 p-8 md:p-12 shadow-[0_0_60px_rgba(190,242,100,0.08)] will-change-transform translate-z-0">
             <Link href="/" className="inline-block text-accent font-bold uppercase tracking-wider mb-8 hover:text-white transition-colors">
               ← Back to Home
             </Link>
@@ -50,7 +50,7 @@ export default function DoNotSell() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email address"
-                  className="w-full p-6 text-xl font-bold bg-transparent text-white border glass-card border-white/10 focus:border-accent outline-none transition-colors"
+                  className="w-full p-6 text-xl font-bold bg-white/[0.02] text-white border border-white/10 focus:border-accent outline-none transition-colors"
                 />
                 <button
                   type="submit"

@@ -64,7 +64,7 @@ export default function TrustStats() {
       className="py-12 relative"
       data-testid="trust-stats-bar"
     >
-      <div className="glass-card border-y border-white/10 max-w-7xl mx-auto p-6 md:p-12">
+      <div className="bg-white/[0.02] border-y border-white/10 max-w-7xl mx-auto p-6 md:p-12 will-change-transform translate-z-0">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4">
           {stats.map((stat, i) => (
             <div key={i} className="text-center flex flex-col items-center">

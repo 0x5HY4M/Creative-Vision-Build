@@ -16,21 +16,21 @@ export default function HeroSection() {
       const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
       tl.fromTo(badgeRef.current,
         { opacity: 0, y: -20 },
-        { opacity: 1, y: 0, duration: 0.6, force3D: true }
+        { opacity: 1, y: 0, duration: 0.6, force3D: true, clearProps: "transform" }
       );
       tl.fromTo(titleRef.current,
         { opacity: 0, y: 40 },
-        { opacity: 1, y: 0, duration: 1, force3D: true },
+        { opacity: 1, y: 0, duration: 1, force3D: true, clearProps: "transform" },
         "-=0.2"
       );
       tl.fromTo(subtitleRef.current,
         { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.8, force3D: true },
+        { opacity: 1, y: 0, duration: 0.8, force3D: true, clearProps: "transform" },
         "-=0.5"
       );
       tl.fromTo(buttonRef.current,
         { opacity: 0, scale: 0.9 },
-        { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.7)", force3D: true },
+        { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.7)", force3D: true, clearProps: "transform" },
         "-=0.4"
       );
     });
@@ -53,7 +53,7 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center w-full px-4">
         <div
           ref={badgeRef}
-          className="inline-block glass-card px-4 py-2 mb-6 text-accent text-sm font-bold tracking-widest uppercase opacity-0"
+          className="inline-block bg-white/[0.02] border border-white/10 px-4 py-2 mb-6 text-accent text-sm font-bold tracking-widest uppercase opacity-0 will-change-transform translate-z-0"
         >
           USA's #1 Financial Discovery Platform
         </div>

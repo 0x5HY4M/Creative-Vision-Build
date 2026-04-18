@@ -74,15 +74,14 @@ export default function HorizontalGallery() {
 
       <div
         ref={containerRef}
-        className="flex md:w-[400vw] flex-col md:flex-row gap-8 px-6 md:px-0 md:pl-6 pb-12"
-        style={{ willChange: 'transform' }}
+        className="flex flex-row overflow-x-auto md:overflow-x-visible md:w-[400vw] gap-8 px-6 md:px-0 md:pl-6 pb-12 snap-x snap-mandatory scrollbar-hide will-change-transform translate-z-0"
       >
         {caseStudies.map((study, i) => (
           <div
             key={i}
-            className="h-panel md:w-screen flex-shrink-0 md:pr-12"
+            className="h-panel w-[85vw] md:w-screen flex-shrink-0 md:pr-12 snap-center"
           >
-            <div className="glass-card text-white border border-white/10 p-8 md:p-12 shadow-[0_0_30px_rgba(190,242,100,0.08)] h-full min-h-[350px] flex flex-col max-w-xl hover:border-accent/20 transition-colors duration-300">
+            <div className="bg-white/[0.02] backdrop-blur-xl text-white border border-white/10 p-8 md:p-12 shadow-[0_0_30px_rgba(190,242,100,0.08)] h-full min-h-[350px] flex flex-col max-w-xl hover:border-accent/20 transition-colors duration-300 will-change-transform translate-z-0">
               <div className="text-6xl md:text-8xl font-black text-transparent opacity-40 mb-6" style={{ WebkitTextStroke: '2px hsl(var(--accent))' }}>
                 {study.num}
               </div>

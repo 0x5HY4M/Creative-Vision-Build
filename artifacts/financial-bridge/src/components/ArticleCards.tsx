@@ -35,10 +35,10 @@ export default function ArticleCards() {
           {articles.map((article, i) => (
             <div
               key={i}
-              className="group cursor-pointer glass-card border border-white/10 p-8 transition-all duration-300 hover:border-accent/30 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(190,242,100,0.15)] flex flex-col min-h-[280px]"
+              className="group cursor-pointer bg-white/[0.02] backdrop-blur-xl border border-white/10 p-8 transition-all duration-300 hover:border-accent/30 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(190,242,100,0.15)] flex flex-col min-h-[280px] will-change-transform translate-z-0"
               data-testid={`article-card-${i}`}
             >
-              <div className="w-14 h-14 glass-card border border-white/10 mb-8 flex items-center justify-center">
+              <div className="w-14 h-14 bg-white/[0.02] border border-white/10 mb-8 flex items-center justify-center">
                 <span className="font-black text-xl text-accent">{i + 1}</span>
               </div>
 
@@ -54,7 +54,7 @@ export default function ArticleCards() {
           ))}
         </div>
 
-        <button className="md:hidden mt-12 w-full font-bold text-accent border border-accent/50 py-4 text-center hover:bg-accent/10 transition-colors uppercase min-h-[44px] glass-card">
+        <button className="md:hidden mt-12 w-full font-bold text-accent border border-accent/50 py-4 text-center hover:bg-accent/10 transition-colors uppercase min-h-[44px] bg-white/[0.02]">
           View All Resources
         </button>
       </div>

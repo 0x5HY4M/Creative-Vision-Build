@@ -6,6 +6,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --color-gold: 45 90% 60%;
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
   --color-border: hsl(var(--border));
@@ -56,6 +57,7 @@
   --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
   --color-sidebar-accent-border: var(--sidebar-accent-border);
   --color-sidebar-ring: hsl(var(--sidebar-ring));
+  --color-gold: hsl(var(--gold));
 
   --font-sans: var(--app-font-sans);
   --font-serif: var(--app-font-serif);
@@ -123,6 +125,21 @@
   --app-font-mono: Menlo, monospace;
   --app-font-display: 'Inter Tight', sans-serif;
   --radius: 0.25rem;
+
+  --gold: 45 90% 60%;
+}
+
+@layer utilities {
+  .translate-z-0 {
+    transform: translateZ(0);
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .dark {

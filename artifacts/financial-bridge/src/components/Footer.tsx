@@ -3,7 +3,7 @@ import { Link } from 'wouter';
 export default function Footer() {
   return (
     <footer className="bg-transparent border-t border-white/10 py-16 px-6" data-testid="footer">
-      <div className="max-w-7xl mx-auto glass-card p-8 md:p-12 border border-white/10">
+      <div className="max-w-7xl mx-auto bg-white/[0.02] backdrop-blur-3xl p-8 md:p-12 border border-white/10 will-change-transform translate-z-0">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div className="flex flex-col">
             <h3 className="text-xl sm:text-2xl font-black font-display text-white mb-4 leading-tight">WealthQuest 2026.</h3>
@@ -61,15 +61,27 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
-          <div className="flex items-center gap-4 flex-wrap">
-            <span className="font-bold text-accent/80">256-bit SSL Secured</span>
-            <span>|</span>
-            <span className="font-bold text-accent/80">CCPA Ready</span>
-            <span>|</span>
-            <span className="font-bold text-accent/80">TCPA Compliant</span>
-            <span>|</span>
-            <span className="font-bold text-accent/80">USA Verified</span>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8 text-xs text-muted-foreground">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full md:w-auto">
+            <div className="bg-white/[0.02] border border-white/10 p-3 rounded-lg flex flex-col items-center justify-center text-center">
+              <span className="font-bold text-accent/80 block mb-1">256-bit SSL</span>
+              <span className="text-[10px] uppercase tracking-tighter opacity-60">Secured</span>
+            </div>
+            <div className="bg-white/[0.02] border border-white/10 p-3 rounded-lg flex flex-col items-center justify-center text-center">
+              <span className="font-bold text-accent/80 block mb-1">CCPA</span>
+              <span className="text-[10px] uppercase tracking-tighter opacity-60">Ready</span>
+            </div>
+            <div className="bg-white/[0.02] border border-white/10 p-3 rounded-lg flex flex-col items-center justify-center text-center">
+              <span className="font-bold text-accent/80 block mb-1">TCPA</span>
+              <span className="text-[10px] uppercase tracking-tighter opacity-60">Compliant</span>
+            </div>
+            <div className="bg-white/[0.02] border border-white/10 p-3 rounded-lg flex flex-col items-center justify-center text-center">
+              <span className="font-bold text-accent/80 block mb-1">USA</span>
+              <span className="text-[10px] uppercase tracking-tighter opacity-60">Verified</span>
+            </div>
+          </div>
+          <div className="text-right">
+            <p className="text-[10px] uppercase tracking-widest font-bold text-muted-foreground/40">WealthQuest 2026 Deployment Unit</p>
           </div>
         </div>
       </div>

@@ -332,7 +332,7 @@ export default function ConversationalForm() {
           </h2>
         </div>
 
-        <div className="glass-card border border-white/10 p-8 md:p-12 relative overflow-hidden">
+        <div className="bg-white/[0.02] backdrop-blur-3xl border border-white/10 p-8 md:p-16 shadow-[0_0_80px_rgba(190,242,100,0.06)] relative overflow-hidden will-change-transform translate-z-0">
           {/* Progress Bar */}
           {currentStep !== 'success' && (
             <div className="absolute top-0 left-0 w-full h-1.5 bg-white/5">
@@ -376,6 +376,29 @@ export default function ConversationalForm() {
             {renderStep()}
           </div>
         </div>
+
+        {currentStep !== 'success' && (
+          <div className="mt-12 pt-8 border-t border-white/10">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <div className="flex flex-col items-center justify-center p-3 bg-white/[0.02] border border-white/10 rounded-lg">
+                <span className="text-accent text-xs font-bold">SSL</span>
+                <span className="text-[10px] text-muted-foreground uppercase">Secured</span>
+              </div>
+              <div className="flex flex-col items-center justify-center p-3 bg-white/[0.02] border border-white/10 rounded-lg">
+                <span className="text-accent text-xs font-bold">CCPA</span>
+                <span className="text-[10px] text-muted-foreground uppercase">Ready</span>
+              </div>
+              <div className="flex flex-col items-center justify-center p-3 bg-white/[0.02] border border-white/10 rounded-lg">
+                <span className="text-accent text-xs font-bold">TCPA</span>
+                <span className="text-[10px] text-muted-foreground uppercase">Compliant</span>
+              </div>
+              <div className="flex flex-col items-center justify-center p-3 bg-white/[0.02] border border-white/10 rounded-lg">
+                <span className="text-accent text-xs font-bold">USA</span>
+                <span className="text-[10px] text-muted-foreground uppercase">Verified</span>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `

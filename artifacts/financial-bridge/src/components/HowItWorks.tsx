@@ -80,7 +80,7 @@ export default function HowItWorks() {
               className="flex flex-col items-center text-center opacity-0"
               data-testid={`how-it-works-step-${i}`}
             >
-              <div className="w-24 h-24 glass-card border border-accent/50 text-accent font-black text-3xl flex items-center justify-center mb-8 shadow-[0_0_20px_rgba(190,242,100,0.15)] z-10 animate-icon-glow">
+              <div className="w-24 h-24 bg-white/[0.02] border border-accent/50 text-accent font-black text-3xl flex items-center justify-center mb-8 shadow-[0_0_20px_rgba(190,242,100,0.15)] z-10 animate-icon-glow will-change-transform translate-z-0">
                 {step.num}
               </div>
               <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-4 uppercase leading-tight">{step.title}</h3>

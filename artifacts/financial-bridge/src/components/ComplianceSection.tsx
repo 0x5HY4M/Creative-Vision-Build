@@ -12,7 +12,7 @@ export default function ComplianceSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          <div className="glass-card border border-white/10 p-6 shadow-[0_0_20px_rgba(190,242,100,0.08)] flex flex-col hover:border-accent/20 transition-colors duration-300" data-testid="compliance-card-0">
+          <div className="bg-white/[0.02] backdrop-blur-xl border border-white/10 p-6 shadow-[0_0_20px_rgba(190,242,100,0.08)] flex flex-col hover:border-accent/20 transition-colors duration-300 will-change-transform translate-z-0" data-testid="compliance-card-0">
             <Lock className="w-12 h-12 text-accent mb-4 animate-icon-glow" />
             <h3 className="text-lg sm:text-xl md:text-2xl text-white font-bold mb-3 uppercase leading-tight">256-bit SSL</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
@@ -20,7 +20,7 @@ export default function ComplianceSection() {
             </p>
           </div>
 
-          <div className="glass-card border border-white/10 p-6 shadow-[0_0_20px_rgba(190,242,100,0.08)] flex flex-col hover:border-accent/20 transition-colors duration-300" data-testid="compliance-card-1">
+          <div className="bg-white/[0.02] backdrop-blur-xl border border-white/10 p-6 shadow-[0_0_20px_rgba(190,242,100,0.08)] flex flex-col hover:border-accent/20 transition-colors duration-300 will-change-transform translate-z-0" data-testid="compliance-card-1">
             <Fingerprint className="w-12 h-12 text-accent mb-4 animate-icon-glow" />
             <h3 className="text-lg sm:text-xl md:text-2xl text-white font-bold mb-3 uppercase leading-tight">CCPA Ready</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
@@ -28,7 +28,7 @@ export default function ComplianceSection() {
             </p>
           </div>
 
-          <div className="glass-card border border-white/10 p-6 shadow-[0_0_20px_rgba(190,242,100,0.08)] flex flex-col hover:border-accent/20 transition-colors duration-300" data-testid="compliance-card-2">
+          <div className="bg-white/[0.02] backdrop-blur-xl border border-white/10 p-6 shadow-[0_0_20px_rgba(190,242,100,0.08)] flex flex-col hover:border-accent/20 transition-colors duration-300 will-change-transform translate-z-0" data-testid="compliance-card-2">
             <MessageCircle className="w-12 h-12 text-accent mb-4 animate-icon-glow" />
             <h3 className="text-lg sm:text-xl md:text-2xl text-white font-bold mb-3 uppercase leading-tight">TCPA Compliant</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
@@ -36,7 +36,7 @@ export default function ComplianceSection() {
             </p>
           </div>
 
-          <div className="glass-card border border-white/10 p-6 shadow-[0_0_20px_rgba(190,242,100,0.08)] flex flex-col hover:border-accent/20 transition-colors duration-300" data-testid="compliance-card-3">
+          <div className="bg-white/[0.02] backdrop-blur-xl border border-white/10 p-6 shadow-[0_0_20px_rgba(190,242,100,0.08)] flex flex-col hover:border-accent/20 transition-colors duration-300 will-change-transform translate-z-0" data-testid="compliance-card-3">
             <ShieldCheck className="w-12 h-12 text-accent mb-4 animate-icon-glow" />
             <h3 className="text-lg sm:text-xl md:text-2xl text-white font-bold mb-3 uppercase leading-tight">USA Verified</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">

@@ -116,8 +116,8 @@ export default function StickyCardStack() {
             <div
               key={index}
               ref={el => cardsRef.current[index] = el}
-              className="absolute top-0 left-0 w-full p-8 md:p-10 border border-white/10 shadow-[0_0_30px_rgba(190,242,100,0.1)] glass-card text-white transition-colors duration-300 hover:border-accent/30"
-              style={{ transformStyle: 'preserve-3d', willChange: 'transform, opacity' }}
+              className="absolute top-0 left-0 w-full p-8 md:p-12 bg-white/[0.02] border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.3)] backdrop-blur-xl will-change-transform translate-z-0 text-white transition-colors duration-300 hover:border-accent/30"
+              style={{ transformStyle: 'preserve-3d' }}
               data-testid={`card-stack-item-${index}`}
             >
               <div className={`text-sm font-black tracking-widest mb-4 ${card.numColor}`}>0{index + 1}</div>

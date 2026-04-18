@@ -23,6 +23,8 @@ function CSSParticleFallback() {
               background: 'rgba(190, 242, 100, 0.5)',
               animation: `float-dot ${dur}s ${delay}s ease-in-out infinite alternate`,
               boxShadow: '0 0 6px rgba(190, 242, 100, 0.4)',
+              willChange: 'transform',
+              transform: 'translateZ(0)',
             }}
           />
         );
@@ -56,7 +58,7 @@ export default function ParticleBackground() {
         const camera = new THREE.PerspectiveCamera(75, mount.offsetWidth / mount.offsetHeight, 0.1, 1000);
         camera.position.z = 5;
 
-        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
         renderer.setSize(mount.offsetWidth, mount.offsetHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         renderer.setClearColor(0x000000, 0);
