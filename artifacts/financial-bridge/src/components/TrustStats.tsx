@@ -70,7 +70,7 @@ export default function TrustStats() {
             <div key={i} className="text-center flex flex-col items-center">
               <div className={`text-4xl sm:text-5xl md:text-6xl font-black font-display tracking-tighter mb-2 ${i === 0 ? 'text-gold' : i === 1 ? 'text-accent' : 'text-white'}`}>
                 {stat.prefix && <span>{stat.prefix}</span>}
-                <span ref={(el) => countersRef.current[i] = el}>0</span>
+                <span ref={(el) => { if (el) countersRef.current[i] = el; }}>0</span>
                 <span>{stat.suffix}</span>
               </div>
               <div className="text-lg md:text-xl font-bold uppercase tracking-wider text-muted-foreground">

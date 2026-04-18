@@ -319,6 +319,8 @@ export default function ConversationalForm() {
             </p>
           </div>
         );
+      default:
+        return null;
     }
   };
 

@@ -76,7 +76,7 @@ export default function HowItWorks() {
           {steps.map((step, i) => (
             <div
               key={i}
-              ref={el => stepsRef.current[i] = el}
+              ref={(el) => { if (el) stepsRef.current[i] = el; }}
               className="flex flex-col items-center text-center opacity-0"
               data-testid={`how-it-works-step-${i}`}
             >

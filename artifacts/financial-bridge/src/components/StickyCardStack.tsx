@@ -115,7 +115,7 @@ export default function StickyCardStack() {
           {cards.map((card, index) => (
             <div
               key={index}
-              ref={el => cardsRef.current[index] = el}
+              ref={(el) => { if (el) cardsRef.current[index] = el; }}
               className="absolute top-0 left-0 w-full p-8 md:p-12 bg-white/[0.02] border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.3)] backdrop-blur-xl will-change-transform translate-z-0 text-white transition-colors duration-300 hover:border-accent/30"
               style={{ transformStyle: 'preserve-3d' }}
               data-testid={`card-stack-item-${index}`}
