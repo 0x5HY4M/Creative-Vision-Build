@@ -4,6 +4,11 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
+import PrivacyPolicy from '@/pages/PrivacyPolicy';
+import TermsOfService from '@/pages/TermsOfService';
+import CCPAPolicy from '@/pages/CCPAPolicy';
+import TCPACompliance from '@/pages/TCPACompliance';
+import DoNotSell from '@/pages/DoNotSell';
 
 const queryClient = new QueryClient();
 
@@ -11,6 +16,11 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/privacy" component={PrivacyPolicy} />
+      <Route path="/terms" component={TermsOfService} />
+      <Route path="/ccpa" component={CCPAPolicy} />
+      <Route path="/tcpa" component={TCPACompliance} />
+      <Route path="/do-not-sell" component={DoNotSell} />
       <Route component={NotFound} />
     </Switch>
   );

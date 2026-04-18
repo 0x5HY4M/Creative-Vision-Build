@@ -1,0 +1,52 @@
+Role: Elite Creative Developer, UX Architect, & Compliance Specialist (Specializing in GSAP, Scrollytelling, & CRO).
+Task: Build a comprehensive, high-authority financial bridge page called "WealthQuest 2026". This is not a "simple landing page"; it is a full-scale, responsive web application inspired by "The Pudding" and "Bidwells".
+
+1. Architectural Foundation & Performance (Strict Rules):
+
+Anti-Messy Scroll: Implement a single smooth-scrolling container (#smooth-wrapper) using GSAP ScrollSmoother (or a clean CSS alternative). Zero tolerance for competing scrollbars or blank screens between sections. Set min-height: 100vh for all main sections.
+
+Mobile-First Precision: Design EVERY pixel for a 6.7-inch mobile screen first, then use Tailwind's responsive modifiers (md:, lg:) for tablet and desktop. Ensure all inputs are tappable (min 44px height).
+
+Speed: Optimize Three.js/GSAP logic for a 95+ Lighthouse score on Vercel/Replit. Lazy-load all non-critical modules.
+
+2. High-End Scrollytelling (Bidwells & The Pudding Style):
+
+Sticky Stacked Cards: Create a section where the background pins while 3 prominent, glassmorphic "Benefit Cards" rotate and stack on top of each other as the user scrolls.
+
+Progressive Data Reveals: Use ScrollTrigger to make data points (e.g., "$5.8M Distributed," "12k+ Winners") animate and "type-in" as they enter the central viewport.
+
+Horizontal Scrolling (The Gallery): Add an "Editor’s Picks" or "Case Studies" section that scrolls HORIZONTALLY as the user scrolls vertically. This section must feature high-quality images with editorial captions.
+
+3. Conversational Lead Engine (Multi-Step Form):
+
+Interface: A pure, chat-like, multi-step conversational interface (Typeform style). One question per "page".
+
+Logic: Conditional logic dynamically changes questions based on prior input (e.g., Debt vs. Solar).
+
+Gamification (Duolingo Style): A visual progress bar at the top pulses and increases with each completed step.
+
+Instant Validation: Real-time ZIP and Email verification with immediate visual feedback (shake/pulse).
+
+4. Neo-Brutalist Aesthetic & Branding:
+
+Palette: Deep Midnight Navy (#0A192F), Cyber Lime (#BEF264), and Gold accents. High-contrast and bold.
+
+No Blobs: Strictly geometric, clean cards with hard drop-shadows (non-blurred) and 4px thick borders. Large, bold typography (Inter Tight).
+
+5. Absolute Compliance & The "Perfect Section":
+
+The Compliance Section (image_0c2006.jpg): Add a dedicated section based EXACTLY on the image image_0c2006.jpg.
+
+Content: A clean grid with icons and bold text for: "256-bit SSL (Lock icon)", "CCPA Ready (Fingerprint icon)", "TCPA Compliant (Speech bubble icon)", and "Advertisement Disclosure (Megaphone icon)". Add the placeholder text from the image verbatim below the disclosure.
+
+Contact Fix: Remove physical address and phone number. The ONLY contact method is the email ayan@gmail.com.
+
+6. Mandatory Pages & Router (The "Bada Page" Fix):
+
+Setup React Router (/privacy, /terms, /ccpa, /tcpa, /do-not-sell).
+
+Populate these pages with professional, legally compliant placeholder content.
+
+Footer: Create a comprehensive, dark, stylized 4-column footer containing links to all mandatory pages, an affiliate disclaimer, and the ayan@gmail.com contact info.
+
+Instruction for AI: Begin by setting up the React + Tailwind + React Router environment. Build the single-scroll wrapper first. Then, build each section one-by-one from the Hero to the Footer. Do not proceed until the single-scroll logic is stable.

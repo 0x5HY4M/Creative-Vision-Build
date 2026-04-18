@@ -83,10 +83,10 @@ export default function HeroSection() {
           ref={buttonRef}
           className="font-black text-base md:text-xl px-8 md:px-12 py-4 md:py-5 border-4 transition-all uppercase tracking-wider opacity-0"
           style={{
-            background: 'hsl(73 87% 58%)',
-            color: 'hsl(225 50% 8%)',
-            borderColor: 'hsl(73 87% 58%)',
-            boxShadow: '8px 8px 0px 0px rgba(200, 241, 53, 0.4)',
+            background: 'hsl(var(--accent))',
+            color: 'hsl(var(--accent-foreground))',
+            borderColor: 'hsl(var(--accent))',
+            boxShadow: '8px 8px 0px 0px rgba(190, 242, 100, 0.4)',
           }}
           data-testid="hero-cta"
           onClick={() => {
@@ -100,11 +100,11 @@ export default function HeroSection() {
           }}
           onMouseEnter={e => {
             (e.currentTarget as HTMLButtonElement).style.transform = 'translate(4px, 4px)';
-            (e.currentTarget as HTMLButtonElement).style.boxShadow = '4px 4px 0px 0px rgba(200, 241, 53, 0.4)';
+            (e.currentTarget as HTMLButtonElement).style.boxShadow = '4px 4px 0px 0px rgba(190, 242, 100, 0.4)';
           }}
           onMouseLeave={e => {
             (e.currentTarget as HTMLButtonElement).style.transform = 'translate(0, 0)';
-            (e.currentTarget as HTMLButtonElement).style.boxShadow = '8px 8px 0px 0px rgba(200, 241, 53, 0.4)';
+            (e.currentTarget as HTMLButtonElement).style.boxShadow = '8px 8px 0px 0px rgba(190, 242, 100, 0.4)';
           }}
         >
           See What You Qualify For

@@ -63,7 +63,7 @@ export default function HowItWorks() {
     <section className="py-24 bg-background relative" data-testid="how-it-works" ref={containerRef}>
       <div className="max-w-5xl mx-auto px-6">
         <h2 className="text-4xl md:text-6xl font-black text-center text-white mb-20 uppercase font-display">
-          How WealthBridge <span className="text-primary">Works</span>
+          How WealthQuest 2026 <span className="text-primary">Works</span>
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
